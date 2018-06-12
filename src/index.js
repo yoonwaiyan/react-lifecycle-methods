@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 
 import Content from "./components/Content";
 
+import "bulma/css/bulma.css";
 import "./styles.css";
 
 function App() {
