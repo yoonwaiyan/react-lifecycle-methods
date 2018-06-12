@@ -10,7 +10,7 @@ const React163 = () => (
     </Columns>
 
     <div>
-      <h3 class="subtitle is-5">Deprecation methods:</h3>
+      <h3 className="subtitle is-5">Deprecation methods:</h3>
       <Table isBordered isStriped>
         <thead>
           <tr>

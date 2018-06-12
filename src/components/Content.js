@@ -1,12 +1,5 @@
-import React, { PureComponent } from "react";
-import {
-  Container,
-  Content as BulmaContent,
-  Tabs,
-  TabList,
-  TabLink,
-  Tab
-} from "bloomer";
+import React, { PureComponent, Fragment } from "react";
+import { Content as BulmaContent, Tabs, TabList, TabLink, Tab } from "bloomer";
 
 import React163 from "./React163";
 import LegacyReact from "./LegacyReact";
@@ -37,7 +30,7 @@ class Content extends PureComponent {
     const { version } = this.state;
 
     return (
-      <Container style={{ marginTop: "15px" }}>
+      <Fragment>
         <Tabs
           isAlign={"centered"}
           isBoxed={true}
@@ -63,7 +56,7 @@ class Content extends PureComponent {
           {version === "16.3" && <React163 />}
           {version === "< 16.3" && <LegacyReact />}
         </BulmaContent>
-      </Container>
+      </Fragment>
     );
   }
 }

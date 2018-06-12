@@ -1,22 +1,36 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { Container } from "bloomer";
 
 import Content from "./components/Content";
+import Example from "./components/ExampleParent";
 
 import "bulma/css/bulma.css";
 import "./styles.css";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <div style={{ textAlign: "center" }}>
-        <h1 class="title">React Lifecycle Methods</h1>
+        <h1 className="title">React Lifecycle Methods</h1>
       </div>
 
       <Content />
     </div>
   );
-}
+};
+
+const MainApp = () => (
+  <BrowserRouter>
+    <Container style={{ marginTop: "15px" }}>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/example" component={Example} />
+      </Switch>
+    </Container>
+  </BrowserRouter>
+);
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(<MainApp />, rootElement);
