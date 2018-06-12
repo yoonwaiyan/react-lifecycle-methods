@@ -5,8 +5,7 @@ import {
   Tabs,
   TabList,
   TabLink,
-  Tab,
-  Icon
+  Tab
 } from "bloomer";
 
 import React163 from "./React163";
@@ -40,7 +39,7 @@ class Content extends PureComponent {
     return (
       <Container style={{ marginTop: "15px" }}>
         <Tabs
-          isAlign={"center"}
+          isAlign={"centered"}
           isBoxed={true}
           isToggle={true}
           style={{ marginBottom: "20px" }}

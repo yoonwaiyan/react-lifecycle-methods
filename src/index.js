@@ -9,7 +9,10 @@ import "./styles.css";
 function App() {
   return (
     <div className="App">
-      <h1>React Lifecycle Methods</h1>
+      <div style={{ textAlign: "center" }}>
+        <h1 class="title">React Lifecycle Methods</h1>
+      </div>
+
       <Content />
     </div>
   );
