@@ -1,4 +1,9 @@
 .App {
-  font-family: Helvetica Neue, Helvetica, sans-serif;
-  margin-top: 30px;
+	font-family: Helvetica Neue, Helvetica, sans-serif;
+	margin-top: 30px;
+}
+
+.PageTitle {
+	text-align: center;
+	margin-bottom: 15px;
 }
