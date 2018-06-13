@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { Switch, Route, HashRouter } from 'react-router-dom';
 import { Container } from 'bloomer';
 
 import App from './components/App';
@@ -10,14 +10,14 @@ import 'bulma/css/bulma.css';
 import './styles.css';
 
 const MainApp = () => (
-  <BrowserRouter>
-    <Container style={{ marginTop: '15px' }}>
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route path="/example" component={Example} />
-      </Switch>
-    </Container>
-  </BrowserRouter>
+	<HashRouter>
+		<Container style={{ marginTop: '15px' }}>
+			<Switch>
+				<Route exact path="/" component={App} />
+				<Route path="/example" component={Example} />
+			</Switch>
+		</Container>
+	</HashRouter>
 );
 
 const rootElement = document.getElementById('root');
