@@ -1,5 +1,14 @@
 import React, { PureComponent, Fragment } from "react";
-import { Content as BulmaContent, Tabs, TabList, TabLink, Tab } from "bloomer";
+import {
+  Content as BulmaContent,
+  Tabs,
+  TabList,
+  TabLink,
+  Tab,
+  Message,
+  MessageHeader,
+  MessageBody
+} from "bloomer";
 
 import React163 from "./React163";
 import LegacyReact from "./LegacyReact";
@@ -18,7 +27,6 @@ class Content extends PureComponent {
   };
 
   isCurrentVersion = version => {
-    console.log("version", version);
     return this.state.version === version;
   };
 
@@ -30,7 +38,7 @@ class Content extends PureComponent {
     const { version } = this.state;
 
     return (
-      <Fragment>
+      <div style={{ marginBottom: "30px" }}>
         <Tabs
           isAlign={"centered"}
           isBoxed={true}
@@ -56,7 +64,33 @@ class Content extends PureComponent {
           {version === "16.3" && <React163 />}
           {version === "< 16.3" && <LegacyReact />}
         </BulmaContent>
-      </Fragment>
+        <Message>
+          <MessageHeader>
+            <p>Extended Reading</p>
+          </MessageHeader>
+          <MessageBody>
+            <ol>
+              <li>
+                <a href="https://reactjs.org/docs/react-component.html#componentwillunmount">
+                  React.Component
+                </a>
+              </li>
+
+              <li>
+                <a href="https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state">
+                  You Probably Don't Need Derived State
+                </a>
+              </li>
+
+              <li>
+                <a href="https://medium.com/@baphemot/understanding-reactjs-component-life-cycle-823a640b3e8d">
+                  Understanding React — Component life-cycle
+                </a>
+              </li>
+            </ol>
+          </MessageBody>
+        </Message>
+      </div>
     );
   }
 }

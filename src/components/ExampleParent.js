@@ -10,6 +10,16 @@ class ExampleParent extends PureComponent {
     rows: []
   };
 
+  // static async getDerivedStateFromProps(nextProps, prevState) {
+  //   const result = await axios.get(
+  //     `https://reqres.in/api/users?per_page=4&page=${1}`
+  //   );
+
+  //   console.log("result", result.data.data);
+
+  //   return { currentPage: 1, rows: result.data.data };
+  // }
+
   componentDidMount() {
     this.fetchData(1);
   }

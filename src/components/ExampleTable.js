@@ -49,16 +49,17 @@ class ExampleTable extends PureComponent {
   //   return { rows: newRows };
   // }
 
-  componentWillMount() {
-    this.setState(this.transformRows(this.props.rows));
-  }
+  // componentWillMount() {
+  //   this.setState(this.transformRows(this.props.rows));
+  // }
 
-  componentWillReceiveProps(nextProps) {
-    this.setState(this.transformRows(nextProps.rows));
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   this.setState(this.transformRows(nextProps.rows));
+  // }
 
   transformRows(rows) {
-    console.log("transformRows", rows);
+    console.log("before transform");
+    console.table(rows);
     const newRows = rows.map(({ id, first_name, last_name, avatar }) => ({
       id,
       first_name,
@@ -67,13 +68,19 @@ class ExampleTable extends PureComponent {
       full_name: `${last_name} ${first_name}`
     }));
 
+    console.log("after transform");
+    console.table(newRows);
+
     return { rows: newRows };
   }
 
   render() {
-    const { rows, columns } = this.state;
+    const { columns } = this.state;
+    const { rows } = this.props;
 
-    if (rows.length === 0) {
+    const derivedRows = this.transformRows(rows).rows;
+
+    if (derivedRows.length === 0) {
       return <div>No Data or loading</div>;
     }
 
@@ -87,7 +94,7 @@ class ExampleTable extends PureComponent {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => (
+          {derivedRows.map((row, index) => (
             <tr key={row.id}>
               {columns.map(column => (
                 <td key={`${column.attribute}-${index}`}>
