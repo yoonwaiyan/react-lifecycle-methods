@@ -10,14 +10,14 @@ import 'bulma/css/bulma.css';
 import './styles.css';
 
 const MainApp = () => (
-	<HashRouter>
-		<Container style={{ marginTop: '15px' }}>
-			<Switch>
-				<Route exact path="/" component={App} />
-				<Route path="/example" component={Example} />
-			</Switch>
-		</Container>
-	</HashRouter>
+  <HashRouter>
+    <Container style={{ marginTop: '15px' }}>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/example" component={Example} />
+      </Switch>
+    </Container>
+  </HashRouter>
 );
 
 const rootElement = document.getElementById('root');
