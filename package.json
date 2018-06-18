@@ -4,7 +4,7 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
-  "homepage": "https://yoonwaiyan.github.io/",
+  "homepage": ".",
   "dependencies": {
     "axios": "0.18.0",
     "bloomer": "0.6.3",
